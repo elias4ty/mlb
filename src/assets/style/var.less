@@ -1,0 +1,18 @@
+@main-bg: #000;
+@tab-bg: #1F222B;
+@main-color: #D8DBE0;
+@vice-color: #7F858D;
+
+#bg-icon(@bp: center, @bs: cover){
+  background-position: @bp;
+  background-size: @bs;
+}
+
+#icon(@wh; @url: ''; @bp: center; @bs: cover; @va: middle){
+  display: inline-block;
+  background-image: url(@url);
+  width: extract(@wh, 1);
+  height: if((length(@wh) = 1), extract(@wh, 1), extract(@wh, 2));
+  vertical-align: @va;
+  #bg-icon(@bp, @bs)
+}
